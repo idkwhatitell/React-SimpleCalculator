@@ -134,7 +134,7 @@ const integer_formatter = new Intl.NumberFormat ("en-us", {
 })
 
 function formatcmd(cmd) {
-  if (cmd = null) return 
+  if (cmd == null) return
   const [integer, decimal] = cmd.split(".")
   if (decimal == null) return integer_formatter.format(integer)
   return `${integer_formatter.format(integer)}.${decimal}`
