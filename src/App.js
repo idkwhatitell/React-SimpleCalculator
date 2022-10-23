@@ -128,7 +128,7 @@ function evaluate ( { currentcmdop, previouscmdop, operation}) {
 }
 
 
-const integer_format = new Intl.NumberFormat ("en-us", {
+const integer_formatter = new Intl.NumberFormat ("en-us", {
   maximumFractionDigits: 0,
 
 })
@@ -136,8 +136,8 @@ const integer_format = new Intl.NumberFormat ("en-us", {
 function formatcmd(cmd) {
   if (cmd = null) return 
   const [integer, decimal] = cmd.split(".")
-  if (decimal == null) return integer_format.format(integer)
-  return `${integer_format.format(integer)}.${decimal}`
+  if (decimal == null) return integer_formatter.format(integer)
+  return `${integer_formatter.format(integer)}.${decimal}`
 }
 
 function App() {
